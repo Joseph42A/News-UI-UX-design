@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- font awsome cdn  -->
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        display: grid;
+        grid-gap: 10px;
+        grid-template-areas:
+          "showcase showcase post-a side-post1"
+          "showcase showcase post-a side-post2"
+          "showcase showcase post-b side-post3"
+          "showcase showcase post-b side-post4";
+        margin: 1rem;
+      }
+
+      .showcase {
+        grid-area: showcase;
+        background: orange;
+        height: 400px;
+        color: white;
+        position: relative;
+      }
+      .showcaseImg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .showcase > h1 {
+        position: absolute;
+        bottom: 3rem;
+        left: 10px;
+        z-index: 100;
+      }
+
+      .info {
+        position: absolute;
+        left: 10px;
+        bottom: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 300px;
+        z-index: 100;
+      }
+      .layer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.541) 60%,
+          rgba(0, 0, 0, 0) 100%
+        );
+
+        height: 100px;
+        width: 100%;
+      }
+      .info img {
+        border-radius: 50%;
+      }
+      .post-a {
+        grid-area: post-a;
+        background: green;
+        min-height: 100px;
+        max-height: 200px;
+        min-width: 200px;
+      }
+      .post-b {
+        grid-area: post-b;
+        min-height: 100px;
+        background: red;
+        min-width: 200px;
+
+        max-height: 200px;
+      }
+      .side-post1 {
+        grid-area: side-post1;
+        min-height: 50px;
+        max-height: 100px;
+        background: violet;
+        min-width: 100px;
+      }
+      .side-post2 {
+        grid-area: side-post2;
+        min-height: 50px;
+        background: cornflowerblue;
+        max-height: 100px;
+        min-width: 100px;
+      }
+      .side-post3 {
+        min-height: 50px;
+        background: rgb(41, 168, 168);
+        grid-area: side-post3;
+        max-height: 100px;
+        min-width: 100px;
+      }
+      .side-post4 {
+        background: rgb(125, 202, 37);
+        min-height: 50px;
+        grid-area: side-post4;
+        min-width: 100px;
+
+        max-height: 100px;
+      }
+      body {
+        max-width: 140rem;
+        margin: auto;
+      }
+      @media (max-width: 600px) {
+        .container {
+          grid-template-areas:
+            "showcase showcase"
+            "showcase showcase"
+            "post-a post-b"
+            "post-a post-b"
+            "side-post1 side-post2"
+            "side-post3 side-post4";
+        }
+      }
+
+      @media (max-width: 400px) {
+        .container {
+          grid-template-areas:
+            "showcase "
+            "showcase "
+            "post-a"
+            "post-b "
+            "side-post1"
+            "side-post2"
+            "side-post3"
+            " side-post4";
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="showcase">
+        <img
+          class="showcaseImg"
+          src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80"
+          alt="showcase-img"
+        />
+
+        <h1>The item will go startight for shops</h1>
+        <div class="info">
+          <img
+            avatar
+            src="https://images.unsplash.com/photo-1639242585418-448730d4381a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=400&q=60"
+            width="30px"
+            height="30px"
+          />
+          <p>Joseph</p>
+          <p>January 8,2021</p>
+          <div>
+            <i class="fas fa-fire"></i>
+            <i>403</i>
+          </div>
+        </div>
+
+        <div class="layer"></div>
+      </div>
+      <div class="post-a">post-a</div>
+      <div class="post-b">post-b</div>
+      <div class="side-post1">side-post1</div>
+      <div class="side-post2">side-post2</div>
+      <div class="side-post3">side-post3</div>
+      <div class="side-post4">side-post4</div>
+    </div>
+  </body>
+</html>
